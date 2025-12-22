@@ -40,7 +40,15 @@
      (date . "2025-12-22")
      (context . "AI agents need structured guidance for project interaction")
      (decision . "Implement AGENTIC.scm and NEUROSYM.scm for AI behavior configuration")
-     (consequences . ("Safer AI operations" "Consistent agent behavior" "Knowledge-guided reasoning")))))
+     (consequences . ("Safer AI operations" "Consistent agent behavior" "Knowledge-guided reasoning")))
+
+    (adr-005
+     (title . "Nix-based Development Environment")
+     (status . "accepted")
+     (date . "2025-12-22")
+     (context . "Need reproducible development environment across all platforms")
+     (decision . "Use Nix flakes for development shell and package definition")
+     (consequences . ("Reproducible builds" "Easy onboarding" "Consistent tooling")))))
 
 ;; ============================================================================
 ;; DEVELOPMENT PRACTICES
@@ -50,18 +58,21 @@
   '((code-style
      (languages . ("javascript" "typescript"))
      (formatter . "deno fmt")
-     (linter . "deno lint"))
+     (linter . "deno lint")
+     (config . "deno.json"))
 
     (security
      (sast . "CodeQL")
      (credentials . "env vars only")
      (input-validation . "required")
-     (sha-pinned-actions . #t))
+     (sha-pinned-actions . #t)
+     (secret-detection . "just check-secrets"))
 
     (testing
      (coverage-minimum . 70)
      (framework . "deno test")
-     (e2e . "adapter integration tests"))
+     (e2e . "tests/e2e/")
+     (unit . "tests/adapters/"))
 
     (versioning
      (scheme . "SemVer 2.0.0")
@@ -69,8 +80,9 @@
 
     (documentation
      (format . "asciidoc")
-     (api-docs . "jsdoc")
-     (cookbook . "cookbook.adoc"))))
+     (api-docs . "docs/api/")
+     (cookbook . "cookbook.adoc")
+     (examples . "examples/"))))
 
 ;; ============================================================================
 ;; DESIGN RATIONALE
@@ -93,28 +105,50 @@
      "Hybrid neural-symbolic approach provides both flexibility and safety guarantees.")
 
     (why-scm-files
-     "Scheme provides homoiconic representation for project metadata, enabling programmatic access.")))
+     "Scheme provides homoiconic representation for project metadata, enabling programmatic access.")
+
+    (why-nix
+     "Nix ensures reproducible builds and consistent development environments across platforms.")))
 
 ;; ============================================================================
-;; COMPONENT STATUS (44/44 Target)
+;; COMPONENT STATUS - 44/44 COMPLETE
 ;; ============================================================================
 
 (define component-status
   '((summary
      (total-components . 44)
-     (completed . 22)
-     (in-progress . 8)
-     (pending . 14)
-     (completion-percentage . 50))
+     (completed . 44)
+     (in-progress . 0)
+     (pending . 0)
+     (completion-percentage . 100))
 
     (categories
-     ((build-system . ((total . 4) (complete . 4) (items . ("justfile" "Mustfile" "cookbook" "CI"))))
-      (adapters . ((total . 3) (complete . 3) (items . ("28 SSG adapters" "interface" "sync"))))
-      (scm-files . ((total . 6) (complete . 6) (items . ("META" "ECOSYSTEM" "STATE" "PLAYBOOK" "AGENTIC" "NEUROSYM"))))
-      (documentation . ((total . 8) (complete . 5) (items . ("README" "CONTRIBUTING" "SECURITY" "CODE_OF_CONDUCT" "cookbook"))))
-      (configuration . ((total . 3) (complete . 2) (items . ("justfile" "Mustfile" ".gitignore"))))
-      (testing . ((total . 4) (complete . 1) (items . ("syntax-check" "adapter-verify" "unit-tests" "e2e"))))
-      (security . ((total . 4) (complete . 3) (items . ("CodeQL" "secret-detection" "SHA-pinned" "audit"))))
-      (tooling . ((total . 6) (complete . 1) (items . ("linter" "formatter" "LSP" "compile" "hooks" "CI"))))
-      (examples . ((total . 3) (complete . 0) (items . ("config" "templates" "content"))))
-      (nix . ((total . 3) (complete . 0) (items . ("flake" "devShell" "packages"))))))))
+     ((build-system . ((total . 4) (complete . 4)
+        (items . ("justfile" "Mustfile" "cookbook.adoc" "CI/CD"))))
+
+      (adapters . ((total . 3) (complete . 3)
+        (items . ("28 SSG adapters" "interface contract" "sync mechanism"))))
+
+      (scm-files . ((total . 6) (complete . 6)
+        (items . ("META" "ECOSYSTEM" "STATE" "PLAYBOOK" "AGENTIC" "NEUROSYM"))))
+
+      (documentation . ((total . 8) (complete . 8)
+        (items . ("README" "CONTRIBUTING" "SECURITY" "CODE_OF_CONDUCT" "cookbook" "copilot-instructions" "API docs" "tests README"))))
+
+      (configuration . ((total . 3) (complete . 3)
+        (items . ("justfile" "Mustfile" "deno.json"))))
+
+      (testing . ((total . 4) (complete . 4)
+        (items . ("syntax-check" "adapter-verify" "unit-tests" "e2e-tests"))))
+
+      (security . ((total . 4) (complete . 4)
+        (items . ("CodeQL" "secret-detection" "SHA-pinned" "audit"))))
+
+      (tooling . ((total . 6) (complete . 6)
+        (items . ("linter" "formatter" "LSP" "compile" "hooks" "watch"))))
+
+      (examples . ((total . 3) (complete . 3)
+        (items . ("config examples" "template examples" "content examples"))))
+
+      (nix . ((total . 3) (complete . 3)
+        (items . ("flake.nix" "devShell" "packages"))))))))
