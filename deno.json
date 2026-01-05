@@ -1,15 +1,16 @@
 {
   "$schema": "https://deno.land/x/deno/cli/schemas/config-file.v1.json",
-  "name": "doit-ssg",
+  "name": "@hyperpolymath/praxis-ssg",
   "version": "0.2.0",
+  "exports": "./src/Main.res.js",
   "tasks": {
-    "test": "deno test tests/ --allow-read",
-    "test:coverage": "deno test --coverage=coverage tests/ --allow-read",
-    "lint": "deno lint adapters/",
-    "fmt": "deno fmt adapters/",
-    "fmt:check": "deno fmt --check adapters/",
-    "check": "deno check adapters/*.js"
+    "build": "deno run -A npm:rescript build",
+    "watch": "deno run -A npm:rescript build -w",
+    "start": "deno run --allow-all src/Main.res.js",
+    "dev": "deno run --watch --allow-all src/Main.res.js",
+    "test": "deno test tests/ --allow-read"
   },
+  "nodeModulesDir": "none",
   "lint": {
     "include": ["adapters/", "tests/"],
     "rules": {
