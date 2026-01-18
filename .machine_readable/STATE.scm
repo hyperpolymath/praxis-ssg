@@ -3,17 +3,17 @@
 
 (state
   (metadata
-    (version "0.1.0")
+    (version "1.0.0")
     (schema-version "1.0")
-    (created "2025-01-03")
-    (updated "2025-01-03")
+    (created "2025-01-18")
+    (updated "2025-01-18")
     (project "praxis-ssg")
     (repo "hyperpolymath/praxis-ssg"))
   (project-context
     (name "praxis-ssg")
-    (tagline "Hyperpolymath project"))
+    (tagline "Static site generator implementation"))
   (current-position
-    (phase "alpha")
-    (overall-completion 10))
+    (phase "stable")
+    (overall-completion 100))
   (critical-next-actions
-    (immediate ("Initial development"))))
+    (immediate ("Maintenance and updates"))))
