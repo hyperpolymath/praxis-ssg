@@ -3,7 +3,7 @@
 
 (ecosystem
   ((version . "1.0.0")
-   (name . "praxis-ssg")
+   (name . "doit-ssg")
    (type . "satellite")
    (purpose . "SSG implementation for poly-ssg ecosystem")
    (position-in-ecosystem . "satellite")

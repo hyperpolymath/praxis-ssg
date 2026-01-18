@@ -7,10 +7,10 @@
     (schema-version "1.0")
     (created "2025-01-18")
     (updated "2025-01-18")
-    (project "praxis-ssg")
-    (repo "hyperpolymath/praxis-ssg"))
+    (project "doit-ssg")
+    (repo "hyperpolymath/doit-ssg"))
   (project-context
-    (name "praxis-ssg")
+    (name "doit-ssg")
     (tagline "Static site generator implementation"))
   (current-position
     (phase "stable")
