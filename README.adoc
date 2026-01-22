@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+// SPDX-License-Identifier: PMPL-1.0-or-later
 // SPDX-FileCopyrightText: 2025 Jonathan D.A. Jewell
 = praxis-ssg
 :toc: left
@@ -12,7 +12,7 @@ A satellite SSG (Static Site Generator) implementation in the hyperpolymath ecos
 
 image:https://img.shields.io/badge/RSR-Gold-gold[RSR Gold]
 image:https://img.shields.io/badge/adapters-28-blue[28 Adapters]
-image:https://img.shields.io/badge/license-AGPL--3.0-green[AGPL-3.0]
+image:https://img.shields.io/badge/license-AGPL--3.0-green[PMPL-1.0]
 
 == Overview
 
@@ -297,7 +297,7 @@ See link:STATE.scm[STATE.scm] for the complete roadmap. Current milestones:
 
 Dual licensed under:
 
-* link:LICENSE.txt[AGPL-3.0-or-later]
+* link:LICENSE.txt[PMPL-1.0-or-later]
 * MIT (with Palimpsest License philosophical overlay)
 
 == Acknowledgments
