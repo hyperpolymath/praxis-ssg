@@ -12,7 +12,7 @@ A satellite SSG (Static Site Generator) implementation in the hyperpolymath ecos
 
 image:https://img.shields.io/badge/RSR-Gold-gold[RSR Gold]
 image:https://img.shields.io/badge/adapters-28-blue[28 Adapters]
-image:https://img.shields.io/badge/license-AGPL--3.0-green[PMPL-1.0]
+image:https://img.shields.io/badge/License-PMPL--1.0-blue.svg[License: PMPL-1.0,link="https://github.com/hyperpolymath/palimpsest-license"]
 
 == Overview
 
